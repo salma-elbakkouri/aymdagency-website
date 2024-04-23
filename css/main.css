@@ -6,20 +6,20 @@
     list-style-type: none;
 }
 
-body {
-    overflow-x: hidden;
 
+img {
+    max-width: 100%;
+    height: auto;
 }
-
 .home {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 50vh;
-    padding: 0 20px;
     font-size: 18px;
     background-color: #005d5f;
+    width: 100%;
 }
 
 .text-section {
@@ -439,7 +439,6 @@ button[type="submit"]:hover {
 .info-group strong {
     padding-bottom: 10px;
     color: #c7ca35;
-    /* Yellow color for labels */
 }
 
 @media (max-width: 768px) {
@@ -453,6 +452,49 @@ button[type="submit"]:hover {
         flex-direction: column;
         align-items: center;
         margin-bottom: 15px;
-        /* Add some bottom margin */
+    }
+}
+
+/* css to make site responsive and mobile friendly */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    float: right;
+    font-size: 30px;
+    color: white;
+    padding-right: 30px;
+}
+
+
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        color: white;
+        background-color: transparent;
+        border: none; 
+    }
+
+    .menu-links {
+        display: none; /* Hide the links initially on small screens */
+        width: 100%;
+        clear: both;
+    }
+
+    .menu-links ul {
+        padding: 0;
+    }
+
+    .menu-links ul li {
+        text-align: center;
+        float: none;
+    }
+
+    .menu-links ul li a {
+        padding: 10px;
+        display: block;
+    }
+
+    .menu-links.show {
+        display: block; /* When toggled, show the links */
     }
 }
