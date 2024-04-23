@@ -5,6 +5,10 @@
     text-decoration: none;
     list-style-type: none;
 }
+html, body{
+    
+    overflow-x: hidden;
+}
 
 
 img {
@@ -19,7 +23,6 @@ img {
     height: 50vh;
     font-size: 18px;
     background-color: #005d5f;
-    width: 100%;
 }
 
 .text-section {
