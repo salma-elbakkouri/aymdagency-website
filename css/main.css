@@ -157,7 +157,7 @@ li a:hover:not(.active) {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
 }
 
 .about-container {
@@ -203,7 +203,7 @@ li a:hover:not(.active) {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
     background-color: #f1f2f6;
 }
 
@@ -241,12 +241,14 @@ li a:hover:not(.active) {
     height: auto;
     border-radius: 20px;
 }
+
 .social {
     padding: 50px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto; /* Change height to auto for responsiveness */
+    height: auto;
+    /* Change height to auto for responsiveness */
     background-color: white;
 }
 
@@ -255,23 +257,28 @@ li a:hover:not(.active) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 1200px; /* Set a maximum width for better readability */
-    margin: 120px auto; /* Center the container horizontally */
+    max-width: 1200px;
+    /* Set a maximum width for better readability */
+    margin: 120px auto;
+    /* Center the container horizontally */
 }
 
 .social-image-container {
     margin: 40px 0;
-    max-width: 100%; /* Make the image container responsive */
+    max-width: 100%;
+    /* Make the image container responsive */
 }
 
 .social-image {
-    max-width: 400px; /* Make the image responsive */
+    max-width: 400px;
+    /* Make the image responsive */
     height: auto;
 }
 
 .social-components {
     display: flex;
-    flex-wrap: wrap; /* Wrap the components to the next line if needed */
+    flex-wrap: wrap;
+    /* Wrap the components to the next line if needed */
     justify-content: center;
     align-items: center;
 }
@@ -293,7 +300,7 @@ li a:hover:not(.active) {
     font-size: 72px;
     text-decoration: none;
 }
- 
+
 
 
 .social-icon.whatsapp {
@@ -342,7 +349,7 @@ li a:hover:not(.active) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
     background-color: #f1f2f6;
 }
 
@@ -378,38 +385,52 @@ li a:hover:not(.active) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-    padding: 10px 20px;
+    padding: 0px;
     font-size: 18px;
     background-color: #005d5f;
+    height: auto; /* Set the height to 100vh */
 }
 
 .contact-form {
     color: white;
-    padding: 20px;
-    width: 400px;
-    /* Set width */
+    padding: 10px 20px; 
+    margin: 0 auto; /* Center the contact form horizontally */
+    max-width: 400px; /* Set a maximum width for the contact form */
+    width: 100%; /* Ensure the contact form takes up the full width of its container */
+}
+
+form {
+    padding-right: 20px;
+    color: white;
+
 }
 
 .contact-form h2 {
     margin-bottom: 20px;
+    text-align: center;
+    /* Center the heading */
 }
 
 .form-group {
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    /* Arrange label and input in a column */
 }
 
 .form-group label {
-    display: block;
     margin-bottom: 5px;
 }
 
 .form-group input,
 .form-group textarea {
-    width: 90%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin: 0; /* Set margin to 0 */
+
 }
 
 .form-group textarea {
@@ -424,6 +445,12 @@ button[type="submit"] {
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 100%;
+    /* Make the button full width */
+    max-width: 200px;
+    /* Limit the button's width for better readability */
+    margin: 0 auto;
+    /* Center the button horizontally */
 }
 
 button[type="submit"]:hover {
@@ -446,6 +473,7 @@ button[type="submit"]:hover {
     justify-content: space-around;
     max-width: 100%;
     color: white;
+    padding-bottom: 160px;
 }
 
 .info-group {
@@ -620,9 +648,9 @@ button[type="submit"]:hover {
 @media (max-width: 768px) {
 
     .text-section h1,
-    .text-section p ,
-    .history-info h2 
-    , .history-info p,
+    .text-section p,
+    .history-info h2,
+    .history-info p,
     .about-info h2,
     .about-info p {
         width: 100%;
@@ -630,40 +658,107 @@ button[type="submit"]:hover {
         text-align: center;
     }
 
-    .about-container img , .history-container img{
-        max-width: 100%;    
+    .about-container img,
+    .history-container img {
+        max-width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;
     }
 
-    .about-container ,.history-container , .social-container
-    {
-        padding:30px 20px;
+    .about-container,
+    .history-container,
+    .social-container {
+        padding: 30px 20px;
         display: flex;
         flex-direction: column;
     }
 
-    .map-container
-    {
+    .map-container {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
     }
+
     .social-components {
         flex-wrap: wrap;
         align-items: center;
     }
 
     .social-icon {
-        width: 100%; 
-        max-width: 150px; 
+        width: 100%;
+        max-width: 150px;
+    }
+
+
+    .social-image {
+        max-width: 100%;
+        height: auto;
     }
 
     
-.social-image {
-    max-width: 100%; 
-    height: auto;
+
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    margin-bottom: 10px; /* Add some space between inputs */
+}
+
+button[type="submit"] {
+    background-color: #c7ca35;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #acae29;
 }
 
 
+}
+
+
+@media (max-width: 460px) {
+    .contact-form {
+        width: 100%;
+        background-color: #005d5f;
+    }
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    margin-bottom: 10px; /* Add some space between inputs */
+}
+
+button[type="submit"] {
+    background-color: #c7ca35;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #acae29;
 }
