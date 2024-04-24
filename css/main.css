@@ -5,16 +5,17 @@
     text-decoration: none;
     list-style-type: none;
 }
-html, body{
-    
+
+html,
+body {
     overflow-x: hidden;
 }
-
 
 img {
     max-width: 100%;
     height: auto;
 }
+
 .home {
     display: flex;
     flex-direction: row;
@@ -23,20 +24,42 @@ img {
     height: 50vh;
     font-size: 18px;
     background-color: #005d5f;
+    position: relative;
 }
 
 .text-section {
-    flex: 0.5;
-    padding-right: 20px;
+    padding: 0px 20px;
+    flex: 1;
     color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-section h1,
+.text-section p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .text-section p {
-    margin: 0;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: white;
+    white-space: normal;
 }
+
+@media (max-width: 1200px) {
+    .text-section h1 {
+        font-size: calc(18px + 2vw);
+        /* Smaller base size plus scaling with viewport width */
+    }
+
+    .text-section p {
+        font-size: calc(14px + 1vw);
+        /* Smaller base size plus a little scaling */
+    }
+}
+
 
 .pic-section {
     width: 300px;
@@ -126,13 +149,7 @@ li a:hover:not(.active) {
     font-size: 20px;
 }
 
-.menu {
-    background-color: #005d5f;
-    display: flex;
-    width: 100%;
-    padding: 15px;
-    justify-content: space-between;
-}
+
 
 /* about */
 .about {
@@ -140,7 +157,7 @@ li a:hover:not(.active) {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 100vh;
 }
 
 .about-container {
@@ -149,7 +166,6 @@ li a:hover:not(.active) {
     justify-content: center;
     display: flex;
     width: max-content;
-    padding: 60px 25px;
     align-items: center;
 }
 
@@ -178,13 +194,16 @@ li a:hover:not(.active) {
 }
 
 
+
+
+
 /* history */
 .history {
     padding: 50px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 100vh;
     background-color: #f1f2f6;
 }
 
@@ -222,46 +241,46 @@ li a:hover:not(.active) {
     height: auto;
     border-radius: 20px;
 }
-
 .social {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Change height to auto for responsiveness */
+    background-color: white;
+}
+
+.social-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-    height: 80vh;
+    max-width: 1200px; /* Set a maximum width for better readability */
+    margin: 120px auto; /* Center the container horizontally */
 }
 
 .social-image-container {
-    width: 100%;
-    /* or any specific width you prefer */
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    /* Spacing between the image and icons */
+    margin: 40px 0;
+    max-width: 100%; /* Make the image container responsive */
 }
 
 .social-image {
-    max-width: 400px;
-    /* Adjust to your preference */
-    width: 100%;
+    max-width: 400px; /* Make the image responsive */
     height: auto;
 }
 
 .social-components {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap; /* Wrap the components to the next line if needed */
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-    flex-wrap: wrap;
 }
 
 .social-icon {
     width: 150px;
     height: 150px;
     border-radius: 15px;
-    margin: 0 10px;
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -274,6 +293,8 @@ li a:hover:not(.active) {
     font-size: 72px;
     text-decoration: none;
 }
+ 
+
 
 .social-icon.whatsapp {
     color: green;
@@ -320,27 +341,24 @@ li a:hover:not(.active) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Center horizontally */
     align-items: center;
-    /* Center vertically */
     height: 100vh;
-    /* Full height of viewport */
     background-color: #f1f2f6;
 }
 
 .map-container h2 {
     font-size: 22px;
-    margin-bottom: 40px;
+    margin: 20px 0px;
+    text-align: center;
 }
 
-
-
 .map-section {
-    width: 50%;
-    /* Adjust width as needed */
+    width: 80%;
     position: relative;
-    height: 70vh;
-    /* Adjust height as needed */
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .map {
@@ -360,7 +378,7 @@ li a:hover:not(.active) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80vh;
+    height: 100vh;
     padding: 10px 20px;
     font-size: 18px;
     background-color: #005d5f;
@@ -422,15 +440,12 @@ button[type="submit"]:hover {
     padding: 20px;
 }
 
-/* Contact info styling */
 .infos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     max-width: 100%;
-    /* Max width to the container's parent width */
     color: white;
-    /* Set the text color to the yellow used elsewhere */
 }
 
 .info-group {
@@ -444,6 +459,83 @@ button[type="submit"]:hover {
     color: #c7ca35;
 }
 
+.menu {
+    display: flex;
+    justify-content: space-between;
+    /* Aligns items to the edges of the container */
+    align-items: center;
+    /* Centers items vertically */
+    width: 100%;
+    /* Full width to utilize all horizontal space */
+    padding: 15px;
+    /* Padding for some space inside the container */
+    background-color: #005d5f;
+}
+
+.menu-links {
+    background-color: #005d5f;
+    color: white;
+    display: flex;
+    /* Makes the menu-links a flex container to align children inline */
+    justify-content: flex-end;
+    /* Aligns children (the links) to the right */
+    align-items: center;
+    /* Centers items vertically */
+    list-style-type: none;
+    /* Removes bullet points */
+    margin: 0;
+    /* Removes margin to align properly with the edges */
+    padding: 0;
+    /* Removes padding for exact alignment */
+}
+
+.menu-links ul {
+    display: flex;
+    align-items: center;
+    /* Ensures vertical alignment is centered */
+    padding: 0;
+    margin: 0;
+}
+
+.menu-links ul li {
+    padding: 5px 15px;
+    /* Adequate spacing between menu items */
+}
+
+.menu-links ul li a {
+    color: white;
+    text-decoration: none;
+    /* Removes underline from links */
+    text-align: center;
+    display: block;
+}
+
+/* Ensuring no extra space on the right */
+.menu-container {
+    padding-right: 0;
+    /* Removes any padding on the right */
+    margin-right: 0;
+    /* Ensures no margin on the right */
+    width: 100%;
+    display: flex;
+    /* Container must span the full width */
+}
+
+
+
+
+.menu-toggle {
+    display: none;
+    /* Hidden by default */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+/* css to make site responsive and mobile friendly */
 @media (max-width: 768px) {
     .infos {
         justify-content: center;
@@ -458,46 +550,120 @@ button[type="submit"]:hover {
     }
 }
 
-/* css to make site responsive and mobile friendly */
-.menu-toggle {
-    display: none; /* Hidden by default */
-    float: right;
-    font-size: 30px;
-    color: white;
-    padding-right: 30px;
-}
-
-
 
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
+        /* Ensure this is explicitly set to override any outside 'none' setting */
+        position: fixed;
+        /* Fixed relative to viewport */
+        top: 10px;
+        /* Adjust as needed */
+        right: 20px;
+        /* Adjust as needed */
+        font-size: 30px;
         color: white;
+        z-index: 110;
+        /* Higher than the overlay to make it clickable */
+        cursor: pointer;
         background-color: transparent;
-        border: none; 
+        border: none;
     }
 
+
     .menu-links {
-        display: none; /* Hide the links initially on small screens */
+        display: none;
+        /* Initially hidden */
         width: 100%;
-        clear: both;
+        /* Take the full width of the .menu */
+        background-color: #005d5f;
+        /* Same background as the menu bar */
+        flex-direction: column;
+        /* Align links in a column */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-links.show {
+        display: flex;
+        /* Flex display to show items in a column */
+        flex-direction: column;
     }
 
     .menu-links ul {
-        padding: 0;
+        overflow-x: hidden;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        /* Full width of the menu links container */
     }
 
     .menu-links ul li {
         text-align: center;
-        float: none;
+        /* Center-align the text */
+        width: 100%;
+        /* Full width for each link */
     }
 
     .menu-links ul li a {
         padding: 10px;
         display: block;
+        /* Block display for links */
+        color: white;
+        /* Text color */
+        text-decoration: none;
+        /* No underline */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .text-section h1,
+    .text-section p ,
+    .history-info h2 
+    , .history-info p,
+    .about-info h2,
+    .about-info p {
+        width: 100%;
+        white-space: normal;
+        text-align: center;
     }
 
-    .menu-links.show {
-        display: block; /* When toggled, show the links */
+    .about-container img , .history-container img{
+        max-width: 100%;    
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
+
+    .about-container ,.history-container , .social-container
+    {
+        padding:30px 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map-container
+    {
+        display: flex;
+        flex-direction: column; 
+    }
+    .social-components {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .social-icon {
+        width: 100%; 
+        max-width: 150px; 
+    }
+
+    
+.social-image {
+    max-width: 100%; 
+    height: auto;
+}
+
+
 }
